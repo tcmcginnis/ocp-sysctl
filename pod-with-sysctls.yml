@@ -4,17 +4,11 @@ metadata:
   name: ubi-sysctls-app
   labels:
   namespace: demo
-#  annotations:
-#    k8s.v1.cni.cncf.io/networks: tuningnad
 spec:
   containers:
     - name: ubi-app
-#      image: registry.access.redhat.com/ubi8
       image: centos
-#      command: ["/bin/bash", "-c", "/usr/bin/dnf install -y procps-ng net-tools"]
       command: ["/bin/bash", "-c", "sleep INF"]
-#      command: ["/bin/bash", "-c", "/usr/bin/dnf install -y procps-ng net-tools", "/bin/bash", "-c", "sleep INF"]
-#        - "install -y procps-ng net-tools"
 #  securityContext:
 #    runAsNonRoot: true
 #    seccompProfile:
