@@ -8,19 +8,23 @@ https://docs.openshift.com/container-platform/4.14/nodes/containers/nodes-contai
 ## Components
 
 ### Add kernel setting to the allowlist
-[Multus allowed list of kernel values](cm-cni-sysctl-allowlist.yml)
+[Multus allowed list of kernel values NetworkAttachmentDefinition.yml](cm-cni-sysctl-allowlist.yml)
 
 ...
 oc edit cm -n openshift-multus cni-sysctl-allowlist 
 ...
 
 ### Create NetworkAttachmentDefinition (Change namespace in the yaml!)
-[NetworkAttachmentDefinition yaml](NetworkAttachmentDefinition.yml)
+[NetworkAttachmentDefinition yaml NetworkAttachmentDefinition.yml](NetworkAttachmentDefinition.yml)
 
+...
 oc create -f NetworkAttachmentDefinition.yml 
+...
 
 ### This is an example pod definition that references the NetworkAttachmentDefinition
-[Example pod with required annotation](pod-with-annotation.yml)
+[Example pod with required annotation pod-with-annotation.yml](pod-with-annotation.yml)
 
+...
 oc create -f pod-with-annotation.yml
+...
 
