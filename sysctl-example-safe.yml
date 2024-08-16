@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sysctl-example-safe
+  namespace: demo
+spec:
+  containers:
+  - name: podexample
+    image: centos
+    command: ["bin/bash", "-c", "sleep INF"]
+    securityContext:
+      runAsUser: 2000 
+      runAsGroup: 3000 
+      allowPrivilegeEscalation: false 
+      capabilities: 
+        drop: ["ALL"]
+  securityContext:
+    runAsNonRoot: true 
+    seccompProfile: 
+      type: RuntimeDefault
+    sysctls:
+    - name: kernel.shm_rmid_forced
+      value: "1"
+    - name: net.ipv4.ip_local_port_range
+      value: "32770       60666"
+    - name: net.ipv4.tcp_syncookies
+      value: "0"
+    - name: net.ipv4.ping_group_range
+      value: "0           200000000"

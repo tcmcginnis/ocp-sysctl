@@ -1,0 +1,26 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: ubi-annotation-app
+  labels:
+  namespace: demo
+  annotations:
+    k8s.v1.cni.cncf.io/networks: tuningnad
+spec:
+  containers:
+    - name: ubi-app
+#      image: registry.access.redhat.com/ubi8
+      image: centos
+#      command: ["/bin/bash", "-c", "/usr/bin/dnf install -y procps-ng net-tools"]
+      command: ["/bin/bash", "-c", "sleep INF"]
+#      command: ["/bin/bash", "-c", "/usr/bin/dnf install -y procps-ng net-tools", "/bin/bash", "-c", "sleep INF"]
+#        - "install -y procps-ng net-tools"
+#  securityContext:
+#    runAsNonRoot: true
+#    seccompProfile:
+#      type: RuntimeDefault
+#    allowPrivilegeEscalation: true
+      securityContext:
+        allowPrivilegeEscalation: false
+        runAsNonRoot: false
+        seccompProfile.type: "RuntimeDefault"

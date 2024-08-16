@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+  allowlist.conf: |-
+    ^net.ipv4.tcp_keepalive_time$
+    ^net.ipv4.conf.IFNAME.accept_redirects$
+    ^net.ipv4.conf.IFNAME.accept_source_route$
+    ^net.ipv4.conf.IFNAME.arp_accept$
+    ^net.ipv4.conf.IFNAME.arp_notify$
+    ^net.ipv4.conf.IFNAME.disable_policy$
+    ^net.ipv4.conf.IFNAME.secure_redirects$
+    ^net.ipv4.conf.IFNAME.send_redirects$
+    ^net.ipv6.conf.IFNAME.accept_ra$
+    ^net.ipv6.conf.IFNAME.accept_redirects$
+    ^net.ipv6.conf.IFNAME.accept_source_route$
+    ^net.ipv6.conf.IFNAME.arp_accept$
+    ^net.ipv6.conf.IFNAME.arp_notify$
+    ^net.ipv6.neigh.IFNAME.base_reachable_time_ms$
+    ^net.ipv6.neigh.IFNAME.retrans_time_ms$
+kind: ConfigMap
+metadata:
+  annotations:
+    kubernetes.io/description: |
+      Sysctl allowlist for nodes.
+    release.openshift.io/version: 4.12.43
+  name: cni-sysctl-allowlist
+  namespace: openshift-multus
+  resourceVersion: "3289"
+  uid: b6181d76-8262-4349-8bfa-d4bdd6f54dc1
