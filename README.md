@@ -35,5 +35,5 @@ oc create -f pod-with-annotation.yml
 
 
 ```
-<managed cluster> $ kustomize build impersonation-resources/ | oc apply -f -
+$ kustomize build impersonation-resources/ | oc apply -f -
 ```
