@@ -5,13 +5,14 @@ This document provides an example of modifying the kernel value for "net.ipv4.tc
 ## Red Hat Documentation
 https://docs.openshift.com/container-platform/4.14/nodes/containers/nodes-containers-sysctls.html
 
-...
 ## Components
 
 ### Add kernel setting to the allowlist
 [Multus allowed list of kernel values](cm-cni-sysctl-allowlist.yml)
 
+...
 oc edit cm -n openshift-multus cni-sysctl-allowlist 
+...
 
 ### Create NetworkAttachmentDefinition (Change namespace in the yaml!)
 [NetworkAttachmentDefinition yaml](NetworkAttachmentDefinition.yml)
