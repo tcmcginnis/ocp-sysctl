@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: ubi-annotation-app
   labels:
-  namespace: demo
+# namespace: demo
   annotations:
     k8s.v1.cni.cncf.io/networks: tuningnad
 spec:

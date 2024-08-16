@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: ubi-sysctls-app
   labels:
-  namespace: demo
+# namespace: demo
 spec:
   containers:
     - name: ubi-app
