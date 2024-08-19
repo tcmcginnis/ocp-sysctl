@@ -4,7 +4,7 @@ This document provides an example of modifying the kernel value for "net.ipv4.tc
 
 The focus on altering the tcp_keepalive_time value was to resolve an issue between a vendor application running in Openshift that maintained a database connection that spanned datacenters and firewalls.  The firewall would tear down stale connections and it's threshold was less than the standard value of tcp_keepalive_time.  This caused availability issues with the application and the firewall for security purposes could not be increased.
 
-= Note: This can also be used to other sysctl kernel parameters as well.
+* Note: This procedure can be used to set other sysctl kernel parameters as well.
 
 ## Red Hat Documentation
 https://docs.openshift.com/container-platform/4.14/nodes/containers/nodes-containers-sysctls.html
